@@ -1,0 +1,105 @@
+body{
+    background-color: #000000;
+    overflow: hidden;/*tira a rolagem da pagina na vertical*/
+}
+
+main::after{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vh;
+
+    background: linear-gradient(-233deg, #000 40%, rgba(0,0,
+    0,0) 65%) no-repeat;/*aqui gerou um degrade-do site css-gradient*/
+
+}
+
+main .personagem{
+    display: none; /*esse display esconde todas as imagens dos personagens*/
+    height: 100vh;
+}
+
+main .personagem.selecionado{
+    display: block; 
+}
+
+main .personagem .imagem{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*esse comando é para que a imagem não fique distorcida. */
+}
+
+.conteudo{
+    
+    position: absolute;/*esse comando coloca o elemento em uma posição fora dos contexto dos outros elementos,em uma posição absoluta*/
+    top: 0;/*colocou os elementos la no topo da pagina*/
+    left: 120px;/*afastou o conteudo do canto esquerdo */
+
+    display: flex;
+    flex-direction: column;/*colocou os elementos em coluna(um abaixo do outro)*/
+    justify-content: center;/*é para centralizar o conteudo verticalmente,mais precisa do comando abaixo para liberar espaço na vertical.*/
+    min-height: 100vh;/*comando para determinar tamanho na vertical.*/
+    max-width: 380px;/*definiu largura maxima do elemento*/
+    z-index: 1;/*aqui coloca o conteudo acima das outras camadas*/
+
+}
+
+.conteudo .nome-personagem{ /*essa é a estilização do nome do personagem */
+   
+    color: white;
+    font-size: 48px;/*esse comando muda o tamanho*/
+    font-family: "Secular one";/*esse muda o tipo de letra*/
+    font-weight: 400;/*aqui muda a grossura da letra*/
+    margin-bottom: 20px;/*expasamento entre os elementos*/
+}
+
+.conteudo .descricao{
+    
+    color: white;
+    font-family: Rubik;
+    font-size: 16 px;
+    line-height: 24px;/*esse coloca espacamento entre as linhas do texto,para não ficar muito juntas.*/
+}
+
+.conteudo .logo{
+    background-image: url("./src/imagens/one-piece-logo.png");
+    background-size: cover;/*aqui diz para cobrir toda a largura e altura denifida abaixo*/
+    height: 100px;/*define a altura da logo*/
+    width: 230px;/*define a largura da logo*/
+    margin-bottom: 35px;/*defini o espaçamento abaixo para não ficar grudado*/
+}
+
+.botoes{
+    position: fixed;
+    top: 0;
+    right: 0;/*os ultimos 3 comandos posicionou os elementos a direita da tela*/
+    display: flex;
+    flex-direction: column;/*colocou um abaixo do outro*/
+    min-height: 100vh;/*altura do fundo*/
+    width: 180px;/*largura do fundo*/
+    justify-content: center;/*centralizou os elementos com referencia a altura*/
+    align-items: center;/*centralizou os elementos com referencia a largura*/
+    gap: 10px;/*aqui ele deu um espaço entre os elementos*/
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+
+.botoes .botao{
+    border: none;/*tirar as bordas laterais*/
+    background: #000000;/*tira as bordas venticais(antes o valor estava :none)*/
+    cursor: pointer;/*muda o cursor do mouse*/
+    border-radius: 50%;
+}
+
+.botoes .botao img{
+    border-radius: 50%;
+}
+
+.botoes .botao.selecionado{
+    transform: scale(1.2);/*altera o tamanho do botão*/
+    box-shadow: 0 0 10px #d9d9d9;/*colocou uma sombra em volta do botão*/
+    border-radius: 50%;/*deixou a sobra redonda*/
+
+}
